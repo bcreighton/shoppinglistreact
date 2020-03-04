@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AddItemForm from './components/AddItemForm';
+import ShoppingList from './components/ShoppingList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    shoppingItems: [
+      /* put stub items in here for testing */
+      { name: 'apples', checked: false },
+      { name: 'oranges', checked: true },
+      { name: 'bread', checked: false },
+    ]
+  };
+
+  render() {
+    return (
+      <>
+        <header>
+          <h1>Shopping List</h1>
+        </header>
+        <main>
+          <section>
+            <AddItemForm />
+          </section>
+          <section>
+            <ShoppingList items={this.state.shoppingItems} />
+          </section>
+        </main>
+      </>
+    )
+  }
 }
 
 export default App;
