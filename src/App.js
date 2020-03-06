@@ -34,7 +34,7 @@ class App extends React.Component {
             <ShoppingList
               items={this.state.shoppingItems}
               onDeleteItem={this.handleDeleteItem}
-              onCheckItem={this.handleDeleteItem}
+              onCheckItem={this.handleCheckItem}
             />
           </section>
         </main>
