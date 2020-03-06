@@ -6,9 +6,10 @@ export default class AddItemForm extends React.Component {
     e.preventDefault()
     this.props.onAddItem(e.target.itemToAdd.value)
   }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.onSubmitForm}>
         <input
           name='itemToAdd'
           type='text'
