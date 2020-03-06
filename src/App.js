@@ -12,6 +12,14 @@ class App extends React.Component {
     ]
   };
 
+  handleDeleteItem() {
+    console.log('handle delete item called')
+  }
+
+  handleCheckItem() {
+    console.log('handle check item called')
+  }
+
   render() {
     return (
       <>
@@ -23,7 +31,11 @@ class App extends React.Component {
             <AddItemForm />
           </section>
           <section>
-            <ShoppingList items={this.state.shoppingItems} />
+            <ShoppingList
+              items={this.state.shoppingItems}
+              onDeleteItem={this.handleDeleteItem}
+              onCheckItem={this.handleDeleteItem}
+            />
           </section>
         </main>
       </>
