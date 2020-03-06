@@ -12,7 +12,7 @@ class App extends React.Component {
     ]
   }
 
-  handleDeleteItem(item) {
+  handleDeleteItem = (item) => {
     const newItems = this.state.shoppingItems.filter(itm => itm !== item)
 
     this.setState({
@@ -20,7 +20,7 @@ class App extends React.Component {
     })
   }
 
-  handleCheckItem(item) {
+  handleCheckItem = (item) => {
     const newItems = this.state.shoppingItems.map(itm => {
       if (itm === item) {
         itm.checked = !itm.checked
