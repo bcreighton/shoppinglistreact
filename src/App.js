@@ -10,10 +10,9 @@ class App extends React.Component {
       { name: 'oranges', checked: true },
       { name: 'bread', checked: false },
     ]
-  };
+  }
 
   handleDeleteItem(item) {
-    debugger
     const newItems = this.state.shoppingItems.filter(itm => itm !== item)
 
     this.setState({
@@ -35,7 +34,14 @@ class App extends React.Component {
   }
 
   handleAddItem = (itemName) => {
-    console.log('handle add item', { itemName })
+    const newItems = [
+      ...this.state.shoppingItems,
+      { name: itemName, checked: false }
+    ]
+
+    this.setState({
+      shoppingItems: newItems
+    })
   }
 
   render() {
