@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import ShoppingList from './ShoppingList';
 
 describe('ShoppingLis component', () => {
-  it('renders Shopping Items when supplied with an items prop', () => {
+  it('renders empty given no items', () => {
     const wrapper = shallow(<ShoppingList />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
